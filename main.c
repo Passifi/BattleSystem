@@ -1,16 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h> 
+#include <time.h> 
 #include "character.h" 
+#include "utilites.h"
 void printCharStats(Character chr);
-
+int calculateDamage(Character chr1, Character chr2);
 int main(void) {
-	
+	LinkedList list;
+	list.head = NULL;
+	addNode(&list, 12, "Sword of Death");
+	printf("%s \n", list.head->name);
+	srand(time(NULL));
 	Character mainChar;
 	initCharacter(&mainChar,"", Knight);
-
-	printCharStats(mainChar);
-
+	int damages =0;
+	for(int i=0;i<10;i++) {
+		printf("Damage: %d\n",	calculateDamage(mainChar,mainChar));
+	}
 	return 0;
+
+}
+
+int calculateDamage(Character chr1, Character chr2) {
+	int damageAccumulator =0;
+	for(int i=0;i<chr1.strength;i++) {
+		float attack = (float)chr1.attack * 1/(rand()%chr1.luck+1);
+		if(attack > chr2.evasion)
+			damageAccumulator += (int)attack;
+	}
+	
+	if(chr2.defense < damageAccumulator) 
+		return chr1.power * (rand()%chr1.luck) + 1;
+	else 
+		return 0;
 
 }
 

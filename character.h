@@ -11,7 +11,10 @@ struct Character {
 	int luck;
 	int wit;
 	int intelligence;
-	int memory; 
+	int memory;
+
+	// equpiment
+	// you will need to implement a hash function for this one first...	
 } typedef Character; 
 
 enum Class {
