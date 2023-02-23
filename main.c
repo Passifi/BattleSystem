@@ -9,6 +9,9 @@ int main(void) {
 	LinkedList list;
 	list.head = NULL;
 	addNode(&list, 12, "Sword of Death");
+	addNode(&list, 13, "Dildo of Pleaasure");
+	addNode(&list, 14, "The Final Bosses Penis");
+	getAllNodes(list);
 	printf("%s \n", list.head->name);
 	srand(time(NULL));
 	Character mainChar;
