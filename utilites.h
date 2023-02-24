@@ -2,7 +2,7 @@
 #define UTILITIES_H
 #include <stdio.h> 
 #include <stdlib.h> 
-
+#define SIZE_OF_HASHTABLE 1024
 typedef struct Node {
 	char name[255];
 	int value;
@@ -23,13 +23,11 @@ void getAllNodes(LinkedList ls);
 
 int computeStringHash(char* str);
 
-
-
-
-
-
-
 struct HashTable {
+	LinkedList list[SIZE_OF_HASHTABLE];
 } typedef HashTable;
+
+void addToHash(HashTable* hash, int value, char*name); 
+int getValueFromHash(HashTable* hash, char*name);
 
 #endif

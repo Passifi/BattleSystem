@@ -18,6 +18,14 @@ int computeStringHash(char* str) {
 	return hashSum;
 }
 
+
+int getValueFromHash(HashTable* hash, char*name) 
+{ 
+	int index = computeStringHash(name)%SIZE_OF_HASHTABLE;
+	getAllNodes(hash->list[index]);
+	return 0;
+}
+
 void printNode(Node n) {
 	printf("ID: %d\n", n.id);
 	printf("Name: %s\n", n.name);
@@ -35,6 +43,13 @@ void getAllNodes(LinkedList ls)
 		printNode(*currentNode);
 		currentNode = currentNode->next;
 	}
+}
+
+void addToHash(HashTable* hash, int value, char*name) {
+	int index = computeStringHash(name)%SIZE_OF_HASHTABLE;
+	addNode(&hash->list[index],value,name);
+
+
 }
 
 void addNode(LinkedList* list, int value, char* name) 

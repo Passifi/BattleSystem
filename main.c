@@ -20,6 +20,9 @@ int main(void) {
 	for(int i=0;i<10;i++) {
 		printf("Damage: %d\n",	calculateDamage(mainChar,mainChar));
 	}
+	HashTable hs;
+	addToHash(&hs,12,"Sword of Death");
+	getValueFromHash(&hs,"Sword of Death");
 	return 0;
 
 }
