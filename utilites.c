@@ -47,6 +47,8 @@ void getAllNodes(LinkedList ls)
 
 void addToHash(HashTable* hash, int value, char*name) {
 	int index = computeStringHash(name)%SIZE_OF_HASHTABLE;
+	printf("Calculated index %d\n",index);
+	
 	addNode(&hash->list[index],value,name);
 
 
@@ -57,11 +59,10 @@ void addNode(LinkedList* list, int value, char* name)
 	Node *n = malloc(sizeof(Node));
 	n->next = NULL;
 	n->value = value;
-	n->id = currentId++;
 	strcpy(n->name,name);
-	
 	if(list->head == NULL)
 	{
+
 		list->head = n;
 		return;
 	}
