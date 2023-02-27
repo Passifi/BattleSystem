@@ -14,12 +14,15 @@ FILE * openFile(char* path) {
 void loadCharacter() {
 	FILE *file = openFile("character.txt");
 	char currentKey[255];
+	char currentValue[255];
 	bool openKey = false;
+	bool loadingValue = false;
 	int c;
 	int keyIndex = 0;
+	int valueIndex = 0;
 	do {
 		c = fgetc(file);
-		if(c == '<') 
+		if(!loadingValue && c == '<') 
 		{
 			openKey = true;
 			keyIndex = 0;
@@ -38,10 +41,29 @@ void loadCharacter() {
 			{
 				currentKey[keyIndex] = '\0';
 				printf("%s\n", currentKey);
+				if(openKey) 
+					loadingValue=true;
+				openKey=false;
+				valueIndex = 0;
+
 			}
 			currentKey[keyIndex++] = c; 
 				
 
+		}
+		else if(loadingValue) 
+		{
+			if(c != '<')
+				currentValue[valueIndex++] = c;
+			else
+			{
+				currentValue[valueIndex] = '\0';
+				printf("Current Value %s\n", currentValue);
+				openKey = true;
+				loadingValue =false; 
+
+			}
+			
 		}
 
 	} while (c != EOF);

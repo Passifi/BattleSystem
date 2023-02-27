@@ -1,14 +1,14 @@
 <Class>
 <Classname></ClassName>
-  <Name></Name>
-  <Attack></Attack>
-  <Strength></Strength>
-  <Power></Power>
-  <Health></Health>
-  <Intelligence></Intelligence>
-  <wit></wit>
-  <Memory></Memory>
-  <Luck></Luck>
-  <Evasion></Evasion>
-  <Defense></Defense>
+  <Name>Pascal the awesome</Name>
+  <Attack>12</Attack>
+  <Strength>13</Strength>
+  <Power>12</Power>
+  <Health>13</Health>
+  <Intelligence>122</Intelligence>
+  <wit>13</wit>
+  <Memory>12</Memory>
+  <Luck>13</Luck>
+  <Evasion>13</Evasion>
+  <Defense>13</Defense>
 </Class>
