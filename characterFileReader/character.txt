@@ -1,0 +1,14 @@
+<Class>
+<Classname></ClassName>
+  <Name></Name>
+  <Attack></Attack>
+  <Strength></Strength>
+  <Power></Power>
+  <Health></Health>
+  <Intelligence></Intelligence>
+  <wit></wit>
+  <Memory></Memory>
+  <Luck></Luck>
+  <Evasion></Evasion>
+  <Defense></Defense>
+</Class>
